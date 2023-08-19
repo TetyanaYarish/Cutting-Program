@@ -12,7 +12,7 @@ public class Program
         Console.WriteLine("Insert number of sizes: ");
         int n = Convert.ToInt32(Console.ReadLine());
         int bnk;
-        int test = 1;
+        int test = 0;
         var sizes = new List<int>();
         int size;
         var bolvanka = new List<int>();
@@ -30,7 +30,7 @@ public class Program
             {
                 sizes.Add(b);
                 allBolvankies.Add(size);
-               // Console.WriteLine("Size Bolvanok  " + size);
+                Console.WriteLine("Size Bolvanok  " + size + " Size.  and b " + b +" bnk " + bnk +" n " + n);
             }
         };
         {
@@ -42,16 +42,18 @@ public class Program
             foreach (int k in allBolvankies)
             {
                 newColoda = newColoda - k;
-                //Console.WriteLine("\n " + k + " coloda " + newColoda);
+                Console.WriteLine("\n " + k );
+              //  Console.WriteLine("\n " + k + " coloda   n " + n);
                 if (newColoda < k || k < allBolvankies.Min() || newColoda < 0)
                 {
                     test++;
                     newColoda = coloda;
-                  //  Console.WriteLine(" ZERO " + test);
+                    //  Console.WriteLine(" ZERO " + test);
+                    Console.WriteLine("\n " + k + "\n coloda #  "+test);
                     continue;
                 }
             }
-            Console.WriteLine(" RESULT \n You need: " + test);
+            Console.WriteLine("\nRESULT \n You need: " + test);
         }
     }
 }
